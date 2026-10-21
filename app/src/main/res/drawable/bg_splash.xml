@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="360dp"
+    android:height="640dp"
+    android:viewportWidth="108"
+    android:viewportHeight="192">
+
+    <path android:pathData="M0,0h108v192h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startColor="#101A33"
+                android:endColor="#03050A"
+                android:angle="90" />
+        </aapt:attr>
+    </path>
+
+    <!-- cyber grid -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,24H108M0,36H108M0,48H108M0,60H108M0,72H108M0,84H108M0,96H108M0,108H108M0,120H108M0,132H108M0,144H108M0,156H108M0,168H108M12,0V192M24,0V192M36,0V192M48,0V192M60,0V192M72,0V192M84,0V192M96,0V192"
+        android:strokeColor="#0E1E36"
+        android:strokeWidth="0.35" />
+
+    <!-- central gold glow -->
+    <path android:pathData="M54,82m-44,0a44,44 0 1,0 88,0a44,44 0 1,0 -88,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="54"
+                android:centerY="82"
+                android:gradientRadius="44"
+                android:startColor="#2EFFD166"
+                android:endColor="#00FFD166" />
+        </aapt:attr>
+    </path>
+
+    <!-- neon accents -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,4H108"
+        android:strokeColor="#5500E5FF"
+        android:strokeWidth="0.6" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,188H108"
+        android:strokeColor="#55FFD166"
+        android:strokeWidth="0.6" />
+</vector>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- deep shadow layer (3D depth) -->
+    <group android:translateX="1" android:translateY="3">
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M58.6,45.5A16,16 0 1,0 58.6,62.5L58.6,54L46,54M78,36L78,72"
+            android:strokeColor="#5C3A00"
+            android:strokeLineCap="round"
+            android:strokeWidth="9" />
+    </group>
+
+    <!-- mid bevel layer -->
+    <group android:translateY="1.4">
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M58.6,45.5A16,16 0 1,0 58.6,62.5L58.6,54L46,54M78,36L78,72"
+            android:strokeColor="#C8880A"
+            android:strokeLineCap="round"
+            android:strokeWidth="9" />
+    </group>
+
+    <!-- front gold layer -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M58.6,45.5A16,16 0 1,0 58.6,62.5L58.6,54L46,54M78,36L78,72"
+        android:strokeColor="#FFD166"
+        android:strokeLineCap="round"
+        android:strokeWidth="8" />
+
+    <!-- top shine -->
+    <group android:translateY="-1">
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M58.6,45.5A16,16 0 1,0 58.6,62.5L58.6,54L46,54M78,36L78,72"
+            android:strokeColor="#FFF3C4"
+            android:strokeLineCap="round"
+            android:strokeWidth="1.6" />
+    </group>
+</vector>
