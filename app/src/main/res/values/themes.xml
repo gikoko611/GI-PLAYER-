@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.GIPlayerPro" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/cyber_cyan</item>
+        <item name="colorOnPrimary">@color/bg_deep</item>
+        <item name="colorSecondary">@color/gold</item>
+        <item name="colorOnSecondary">@color/bg_deep</item>
+        <item name="android:windowBackground">@color/bg_deep</item>
+        <item name="android:statusBarColor">@color/bg_deep</item>
+        <item name="android:navigationBarColor">@color/bg_deep</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Theme.GIPlayerPro.Splash">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>

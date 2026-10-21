@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GI PLAYER PRO</string>
+    <string name="powered_by">POWERED BY I KO KO</string>
+    <string name="tagline">MODERN CYBER VIDEO PLAYER</string>
+    <string name="tab_videos">ဗီဒီယို</string>
+    <string name="tab_folders">ဖိုင်တွဲ</string>
+    <string name="tab_streams">စထရင်း</string>
+    <string name="no_videos">ဗီဒီယိုများ မတွေ့ပါ 😴</string>
+    <string name="no_folders">ဖိုင်တွဲ မတွေ့ပါ</string>
+    <string name="no_streams">စထရင်း မရှိသေးပါ — အောက်ချောင်း + နှိပ်ပြီး ထည့်ပါ</string>
+    <string name="no_permission">ဗီဒီယိုဖိုင်များ ဖတ်ရန် ခွင့်ပြုချက် လိုအပ်ပါသည်</string>
+    <string name="add_stream">စထရင်း URL ထည့်ပါ (m3u8 / mp4 …)</string>
+    <string name="add">ထည့်မည်</string>
+    <string name="cancel">ပယ်ဖျက်</string>
+    <string name="delete">ဖျက်မည်</string>
+    <string name="sort">စီစဉ်ချက်</string>
+    <string name="refresh">ပြန်လည်ဆန်းစစ်</string>
+    <string name="about">အကြောင်းအရာ</string>
+    <string name="ok">OK</string>
+</resources>
