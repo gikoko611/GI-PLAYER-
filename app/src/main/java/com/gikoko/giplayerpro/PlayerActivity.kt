@@ -91,6 +91,7 @@ class PlayerActivity : AppCompatActivity() {
     private var startBrightness = 0.5f
     private var startVolume = 0.5f
     private var seekDelta = 0L
+    private var controllerVisible = false
     private lateinit var gestureDetector: GestureDetector
 
     private val hideGestureRunnable = Runnable { gestureIndicator.visibility = View.GONE }
@@ -162,9 +163,10 @@ class PlayerActivity : AppCompatActivity() {
             .build()
         activePlayer = player
         playerView.player = player
-        playerView.setControllerVisibilityListener { visibility ->
+        playerView.setControllerVisibilityListener(PlayerView.ControllerVisibilityListener { visibility ->
+            controllerVisible = visibility == View.VISIBLE
             gestureArea.visibility = if (visibility == View.VISIBLE) View.GONE else View.VISIBLE
-        }
+        })
         player.addListener(object : Player.Listener {
             override fun onPlaybackStateChanged(playbackState: Int) {
                 if (playbackState == Player.STATE_READY) attachEffects()
@@ -202,7 +204,7 @@ class PlayerActivity : AppCompatActivity() {
             this,
             object : GestureDetector.SimpleOnGestureListener() {
                 override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
-                    if (playerView.isControllerShown) playerView.hideController()
+                    if (controllerVisible) playerView.hideController()
                     else playerView.showController()
                     return true
                 }
@@ -481,11 +483,10 @@ class PlayerActivity : AppCompatActivity() {
         val sbBoost = view.findViewById<SeekBar>(R.id.sbBoost)
 
         swEq.isChecked = e.enabled
-        val presets = (0 until e.numberOfPresets.toInt()).map { e.getPresetName(it) }
+        val presets = (0 until e.numberOfPresets.toInt()).map { e.getPresetName(it.toShort()) }
         spPreset.adapter =
             ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, presets)
-        val cur = e.preset.toInt()
-        if (cur in presets.indices) spPreset.setSelection(cur)
+        spPreset.setSelection(0)
 
         var spinnerArmed = false
         spPreset.post { spinnerArmed = true }
@@ -498,7 +499,7 @@ class PlayerActivity : AppCompatActivity() {
         }
 
         sbBass.max = 1000
-        sbBass.progress = bassBoost?.strength?.toInt() ?: 0
+        sbBass.progress = 0
         sbBass.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 bassBoost?.let {
@@ -512,7 +513,7 @@ class PlayerActivity : AppCompatActivity() {
         })
 
         sbBoost.max = 20
-        sbBoost.progress = ((loudness?.targetGain ?: 0) / 100).coerceIn(0, 20)
+        sbBoost.progress = if (boostOn) 5 else 0
         sbBoost.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 loudness?.let {
@@ -569,8 +570,8 @@ class PlayerActivity : AppCompatActivity() {
         }
     }
 
-    override fun onPictureInPictureModeChanged(newConfig: Configuration) {
-        super.onPictureInPictureModeChanged(newConfig)
+    override fun onPictureInPictureModeChanged(isInPictureInPictureMode: Boolean, newConfig: Configuration) {
+        super.onPictureInPictureModeChanged(isInPictureInPictureMode, newConfig)
         if (isInPictureInPictureMode) {
             chipsScroll.visibility = View.GONE
             playerView.hideController()
