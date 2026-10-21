@@ -47,8 +47,8 @@ jobs:
           tag_name: v1.0.0
           name: GI PLAYER PRO v1.0.0
           body: |
-            ⚡ GI PLAYER PRO — Modern Cyber Theme Video Player
-            🏆 POWERED BY I KO KO
+            GI PLAYER PRO - Modern Cyber Theme Video Player
+            POWERED BY I KO KO
           files: apk/GI-PLAYER-PRO.apk
         env:
-          GITHUB_TOKEN: ${D}{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
